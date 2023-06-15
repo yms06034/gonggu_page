@@ -148,8 +148,8 @@ messageBtn.addEventListener('click', () => {
 });
 
 function checkM(m) {
-  location.href = 'sms:' + '01055487737' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("아산 아르니퍼스트 분양 정보 문의합니다.")
-}
+  location.href = 'sms:' + '01064733455' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("인천 더샵 아르테 분양 정보 문의합니다.");
+};
 
 
 // MODAL
