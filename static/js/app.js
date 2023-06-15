@@ -21,42 +21,42 @@ function setCookie(name, value, days) {
   document.cookie = name + '=' + value + '; expires=' + expirationDate.toUTCString() + '; path=/;';
 }
 
-function initPopup() {
-  var popup1Cookie = getCookie('popup1');
-  if (popup1Cookie === 'hidden') {
-    document.getElementById('popup1').setAttribute('data-popup-state', 'hidden');
-  }
+// function initPopup() {
+//   var popup1Cookie = getCookie('popup1');
+//   if (popup1Cookie === 'hidden') {
+//     document.getElementById('popup1').setAttribute('data-popup-state', 'hidden');
+//   }
 
-  document.getElementById('hide1dayBtn1').addEventListener('click', function() {
-    setCookie('popup1', 'hidden', 1);
+//   document.getElementById('hide1dayBtn1').addEventListener('click', function() {
+//     setCookie('popup1', 'hidden', 1);
 
-    closePopup('popup1');
-  });
+//     closePopup('popup1');
+//   });
 
-  document.getElementById('closeBtn1').addEventListener('click', function() {
-    closePopup('popup1');
-  });
+//   document.getElementById('closeBtn1').addEventListener('click', function() {
+//     closePopup('popup1');
+//   });
 
-  var popup2Cookie = getCookie('popup2');
-  if (popup2Cookie === 'hidden') {
-    document.getElementById('popup2').setAttribute('data-popup-state', 'hidden');
-  }
+//   var popup2Cookie = getCookie('popup2');
+//   if (popup2Cookie === 'hidden') {
+//     document.getElementById('popup2').setAttribute('data-popup-state', 'hidden');
+//   }
 
 
-  document.getElementById('hide1dayBtn2').addEventListener('click', function() {
-    setCookie('popup2', 'hidden', 1);
+//   document.getElementById('hide1dayBtn2').addEventListener('click', function() {
+//     setCookie('popup2', 'hidden', 1);
 
-    closePopup('popup2');
-  });
+//     closePopup('popup2');
+//   });
 
-  document.getElementById('closeBtn2').addEventListener('click', function() {
-    closePopup('popup2');
-  });
-}
+//   document.getElementById('closeBtn2').addEventListener('click', function() {
+//     closePopup('popup2');
+//   });
+// }
 
-window.addEventListener('load', function() {
-  initPopup();
-});
+// window.addEventListener('load', function() {
+//   initPopup();
+// });
 
 
 // SCROLL TOP BTN
@@ -108,17 +108,32 @@ function checkM(m) {
 
 
 // MODAL
-var modal = document.getElementById('modal');
 var openModalBtn = document.getElementById('openModalBtn');
+var openModalBtn2 = document.getElementById('openModalBtn2');
+
+var modal = document.getElementById('modal');
 var closeModalBtn = document.getElementsByClassName('close')[0];
 
 openModalBtn.addEventListener('click', function() {
-  modal.style.display = 'block';
+  showModal();
 });
 
-closeModalBtn.addEventListener('click', function() {
+openModalBtn2.addEventListener('click', () => {
+  showModal();
+})
+
+closeModalBtn.addEventListener('click', () => {
+  closeModal();
+})
+
+
+function showModal() {
+  modal.style.display = 'block';
+};
+
+function closeModal() {
   modal.style.display = 'none';
-});
+};
 
 window.addEventListener('click', function(event) {
   if (event.target === modal) {
@@ -128,5 +143,5 @@ window.addEventListener('click', function(event) {
 
 
 // MODAL ON CLICK OF ADD POPUP
-var openPModal1 = document.getElementById('openModalBtn1');
-var openPModal2 = document.getElementById('openModalBtn2');
+// var openPModal1 = document.getElementById('openModalBtn1');
+// var openPModal2 = document.getElementById('openModalBtn2');

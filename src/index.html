@@ -52,7 +52,9 @@
   <!-- CONTENT AREA (img) -->
   <div class="main-container">
     <div class="img-content">
-      <img class="iimg" src="../images/body/전농동.jpg" alt="maincontent" />
+      <button id="openModalBtn2">
+        <img class="iimg" src="../images/body/전농동.jpg" alt="maincontent" />
+      </button>
     </div>
   </div>
 
@@ -68,13 +70,13 @@
       <div class="btn-area">
         <a id="tlphnCnslt" href="tel:010-9999-6182">
           <img class="icon" src="../images/icon/ion_call.png" alt="call" />
-          <p class="sub-text">전화상담</p>
+          <p class="sub-text">전화문의</p>
         </a>
       </div>
       <div class="btn-area">
         <button id="textCnslt" class="messageBtn">
           <img class="icon" src="../images/icon/entypo_message.png" alt="message" />
-          <p class="sub-text">문자상담</p>
+          <p class="sub-text">문자문의</p>
         </button>
       </div>
       <div class="btn-area">
@@ -99,14 +101,14 @@
       <h2 class="modal_totle">상담 접수</h2>
       <form class="gform pure-form pure-form-stacked form-area" method="POST" data-email="uisuk816@gmail.com"
         action="https://script.google.com/macros/s/AKfycbxTP9S7QXtpMmH_TSVYj3V7p7_kV7ld34wKXw_nejVWsNf-QVlyN57p5Jo1Wo_4wFltag/exec">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="이름" required><br><br>
-        <label for="text">전화번호</label>
-        <input type="text" id="phonenumber" name="핸드폰번호" required><br><br>
-        <label for="schedule">원하시는 전화 상담 접수 일자를 선택하세요</label>
-        <input class="margin-botton" type="date" name="상담일자" min="2023-06-01" max="2025-12-31" required/>
-        <label for="time">원하시는 전화 상담 시간을 기재해주세요</label>
-        <input name="상담시간" type="text" placeholder="ex&#41; 오후 2시" required />
+        <label for="name">이름 <span style="color:#ff5252">(필수)</span></label>
+        <input type="text" id="name" name="이름" required /><br>
+        <label for="text">전화번호 <span style="color:#ff5252">(필수)</span></label>
+        <input type="text" id="phonenumber" name="핸드폰번호" required /><br>
+        <label for="schedule">원하시는 전화 상담 접수 일자를 선택하세요 <span>(선택)</span></label>
+        <input class="margin-botton" type="date" name="상담일자" min="2023-06-01" max="2025-12-31" />
+        <label for="time">원하시는 전화 상담 시간을 기재해주세요 <span>(선택)</span></label>
+        <input name="상담시간" type="text" placeholder="ex&#41; 오후 2시" />
         <input id="sbms" class="submit-input" type="submit" value="제출" >
         <p class="notice">위 정보는 전화상담이 끝난 후에 삭제 됩니다.</p>
         <div style="display:none" class="thankyou_message">
