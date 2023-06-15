@@ -148,7 +148,7 @@ messageBtn.addEventListener('click', () => {
 });
 
 function checkM(m) {
-  location.href = 'sms:' + '01064733455' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("인천 더샵 아르테 분양 정보 문의합니다.");
+  location.href = 'sms:' + '01027138884' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("천안 더샵 신부센트라 분양 정보 문의합니다.");
 };
 
 
