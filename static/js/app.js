@@ -1,3 +1,48 @@
+// Scroll ID
+var anchorTags = document.querySelectorAll('a[href^="#"]');
+
+
+for (var i = 0; i < anchorTags.length; i++) {
+  anchorTags[i].addEventListener('click', function (event) {
+    event.preventDefault(); 
+    var targetId = this.getAttribute('href');
+
+    var targetPosition = document.querySelector(targetId).offsetTop;
+
+    if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    } else {
+        scrollToSmoothly(targetPosition, 500); 
+      }
+  });
+}
+
+function scrollToSmoothly(to, duration) {
+    if (duration <= 0) return;
+    var difference = to - window.pageYOffset;
+    var perTick = (difference / duration) * 10;
+
+    setTimeout(function () {
+        window.scroll(0, window.pageYOffset + perTick);
+        if (window.pageYOffset === to) return;
+        scrollToSmoothly(to, duration - 10);
+    }, 10);
+}
+
+function scrollToSmoothly(to, duration) {
+  if (duration <= 0) return;
+  var difference = to - window.pageYOffset;
+  var perTick = (difference / duration) * 10;
+
+  setTimeout(() => {
+    window.scroll(0, window.pageXOffset + perTick);
+    if (window.pageYOffset === to) return;
+    scrollToSmoothly(to, duration - 10);
+  }, 10);
+}
 
 // POPUP
 function closePopup(popupId) {
@@ -103,7 +148,7 @@ messageBtn.addEventListener('click', () => {
 });
 
 function checkM(m) {
-  location.href = 'sms:' + '01099996182' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("청량리역 전농동 아파트 분양 정보 문의합니다.")
+  location.href = 'sms:' + '01055487737' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("아산 아르니퍼스트 분양 정보 문의합니다.")
 }
 
 
